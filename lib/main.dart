@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main(){
-runApp(Text('Hello World !!', textDirection: TextDirection.rtl,)
-);
+runApp(const MyApp());
 
+}
+
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+   Widget build(BuildContext context){
+    return MaterialApp(
+      home: Text('Hello World !!'),
+    );
+    }
 }
