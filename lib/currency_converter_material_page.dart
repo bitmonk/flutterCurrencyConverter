@@ -5,14 +5,22 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        color: Colors.black,
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+      borderRadius: BorderRadius.circular(10),
+    );
+    return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               '0',
               style: TextStyle(
                 fontSize: 45,
@@ -20,26 +28,25 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
             ),
-            TextField(
-              style: TextStyle(
-                color: Colors.black,
-              ),
-              decoration: InputDecoration(
-                hintText: 'Please Enter The Currency in USD',
-                hintStyle: TextStyle(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
-                prefixIcon: Icon(Icons.monetization_on),
-                prefixIconColor: Colors.white60,
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.red,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                      strokeAlign: BorderSide.strokeAlignInside),
+                decoration: InputDecoration(
+                  hintText: 'Please Enter The Currency in USD',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                  ),
+                  prefixIcon: const Icon(Icons.monetization_on),
+                  prefixIconColor: Colors.black,
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: border,
+                  enabledBorder: border,
                 ),
+                keyboardType: TextInputType.number,
               ),
             ),
           ],
