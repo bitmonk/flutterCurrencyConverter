@@ -38,7 +38,7 @@ class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMateria
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
              Text(
-              'NPR $result',
+              'NPR ${result!=0 ? result.toStringAsFixed(2) : result.toStringAsFixed(0)}',
               style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
